@@ -1,11 +1,11 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import SwipeScreen from './src/screens/SwipeScreen';
+import BottomTabNavigator from './src/navigation/BottomTabNavigator';
 
 export default function App() {
   return (
     <NavigationContainer>
-      <SwipeScreen />
+      <BottomTabNavigator />
     </NavigationContainer>
   );
 }
