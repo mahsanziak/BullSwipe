@@ -1,0 +1,81 @@
+✅ 1. Full Tech Stack for Your Project
+We are using a React Native + FastAPI stack for a cross-platform mobile app that works on iOS & Android.
+
+Layer	Tech Stack	Purpose
+Frontend (Mobile App)	React Native (TypeScript)	Cross-platform mobile UI
+UI Components	React Native + React Native Deck Swiper	Tinder-style swipe interactions
+State Management	React Context API / Zustand (optional)	Store user preferences
+Navigation	React Navigation	Handle screen transitions
+Networking	Axios (REST API)	Fetch stock data from backend
+Stock API	Alpha Vantage / Yahoo Finance API (JavaScript)	Get stock data
+Backend (API Layer)	FastAPI (Python)	Serve stock recommendations
+Database	Supabase (PostgreSQL)	Store user preferences & swipe history
+Auth (Optional)	Supabase Auth / Firebase Auth	User authentication
+Backend Deployment	Vercel / Railway (optional)	Host API for scalability
+
+BullSwipe/
+│── assets/  # Icons, images, fonts
+│   ├── icons/
+│   ├── images/
+│   ├── fonts/
+│
+│── src/  # All app source code
+│   │── components/  # Reusable UI components
+│   │   ├── SwipeCard.tsx  # Tinder-style stock card
+│   │   ├── SwipeButtons.tsx  # Swipe actions (like/dislike)
+│   │   ├── StockChart.tsx  # Stock data charts
+│   │
+│   │── screens/  # Screens for navigation
+│   │   ├── HomeScreen.tsx  # Main screen
+│   │   ├── SwipeScreen.tsx  # Tinder-style swipe UI
+│   │   ├── ProfileScreen.tsx  # User profile & preferences
+│   │   ├── StockDetailsScreen.tsx  # Stock detail page
+│   │
+│   │── navigation/  # App navigation
+│   │   ├── AppNavigator.tsx  # React Navigation setup
+│
+│   │── services/  # API calls
+│   │   ├── stockService.ts  # Fetch stock data from API
+│   │   ├── userService.ts  # Manage user data (Supabase)
+│
+│   │── state/  # Global state management (optional)
+│   │   ├── SwipeContext.ts  # Context for storing swipe preferences
+│
+│   │── utils/  # Utility functions
+│   │   ├── constants.ts  # App constants (e.g., API keys)
+│   │   ├── helpers.ts  # Helper functions
+│
+│── backend/  # FastAPI Backend
+│   ├── main.py  # API entry point
+│   ├── api/
+│   │   ├── stock_api.py  # Fetch stock data from yFinance
+│   │   ├── recommendation_api.py  # AI-driven stock recommendations
+│   ├── models/
+│   │   ├── stock_model.py  # Stock data model
+│   ├── services/
+│   │   ├── supabase_service.py  # Connects to Supabase
+│   ├── utils/
+│   │   ├── config.py  # API keys & settings
+│
+│── app.json  # Expo configuration
+│── index.ts  # Entry point
+│── package.json  # Dependencies
+│── tsconfig.json  # TypeScript settings
+
+
+📌 Project Summary: BullSwipe – A Stock Recommendation App
+BullSwipe is a cross-platform mobile app (iOS & Android) that helps users discover and invest in stocks using a Tinder-style swiping interface.
+
+🔹 How It Works:
+1️⃣ Users are shown stock recommendations based on market trends & risk metrics.
+2️⃣ They can swipe right (like) or left (dislike) to refine their preferences.
+3️⃣ The app learns from user choices and improves future stock recommendations.
+4️⃣ Users can view detailed stock insights, charts, and risk analysis.
+5️⃣ The backend fetches real-time stock data via Yahoo Finance / Alpha Vantage and stores user preferences in Supabase.
+
+
+To run:
+use: npx expo start -c
+or whatever cursor recommends to use 
+
+also you will need to install Expo Go on your phone to be able to view the output 
