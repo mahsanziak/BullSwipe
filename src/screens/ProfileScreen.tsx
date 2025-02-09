@@ -1,8 +1,15 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 const ProfileScreen = () => {
+  const navigation = useNavigation();
+
+  const handleOnboardingPress = () => {
+    navigation.navigate('Onboarding');
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.headerTitle}>Profile</Text>
@@ -74,6 +81,14 @@ const ProfileScreen = () => {
           </TouchableOpacity>
         </View>
       </View>
+
+      <TouchableOpacity 
+        style={styles.onboardingButton}
+        onPress={handleOnboardingPress}
+      >
+        <Ionicons name="refresh-circle-outline" size={24} color="#4169E1" />
+        <Text style={styles.onboardingButtonText}>Try Onboarding</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -193,6 +208,22 @@ const styles = StyleSheet.create({
   learnMoreText: {
     color: '#4169E1',
     fontWeight: '600',
+  },
+  onboardingButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#F5F7FA',
+    padding: 12,
+    borderRadius: 20,
+    marginTop: 16,
+    marginHorizontal: 16,
+  },
+  onboardingButtonText: {
+    color: '#4169E1',
+    fontSize: 16,
+    fontWeight: '600',
+    marginLeft: 8,
   },
 });
 
